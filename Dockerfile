@@ -1,4 +1,7 @@
-FROM python:3
-WORKDIR pythonProject
-#RUN main.py
-CMD [ "python3", "./main.py" ]
+FROM python:3.8-alpine
+COPY ./requirements.txt /app/requirements.txt
+WORKDIR /pythonProject
+RUN pip install -r requirements.txt
+COPY . /pythonProject
+ENTRYPOINT [ "python" ]
+CMD ["view.py" ]
