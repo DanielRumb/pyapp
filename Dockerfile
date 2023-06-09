@@ -4,4 +4,4 @@ WORKDIR /pythonProject
 COPY . /pythonProject
 RUN pip install -r requirements.txt
 ENTRYPOINT [ "python" ]
-CMD ["view.py" ]
+CMD ["main.py" ]
