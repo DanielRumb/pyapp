@@ -1,10 +1,8 @@
 FROM python:3.8-alpine
-#COPY ./requirements.txt /app/requirements.txt
-#WORKDIR /pythonProject
-#COPY . /pythonProject
-#RUN pip install -r requirements.txt
-#ENTRYPOINT [ "python3" ]
-#CMD ["main.py"]
-ADD main.py /
-CMD ["python3", "./main.py"]
+COPY ./requirements.txt /app/requirements.txt
+WORKDIR /pythonProject
+COPY . /pythonProject
+RUN pip install -r requirements.txt
+ENTRYPOINT [ "python3" ]
+CMD ["main.py"]
 #RUN python3 main.py
